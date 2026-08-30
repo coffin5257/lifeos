@@ -6,7 +6,7 @@ LifeOS 是一个由你和 AI agent 共同维护的私人知识与决策系统。
 
 ## 开始使用
 
-> 当前仓库为 private。开放给其他人之前，可将其改为 public，并在 GitHub 设置中启用 **Template repository**。
+> 当前仓库是已启用 **Template repository** 的 private 仓库，只有你和获邀协作者可以使用。未来改为 public 后，任何人都可以用它生成自己的 private LifeOS 仓库。
 
 ### Codex
 
