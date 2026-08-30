@@ -1,0 +1,30 @@
+schema_version: 1
+core_version: 0.1.0
+status: uninitialized
+initialized_at: null
+agents: []
+enabled_capabilities: []
+personalization:
+  content_language: null
+  naming_language: null
+  collaboration_style: null
+structure:
+  mode: personalized
+  paths:
+    self: null
+    inbox: null
+    sources: null
+    outputs: null
+    people: null
+    projects: null
+    areas: null
+    discussions: null
+    knowledge: null
+    archive: null
+privacy:
+  default_read_scope: task_relevant
+  external_sharing: explicit_only
+storage:
+  format: local_files
+  version_control: user_choice
+  sync: user_choice

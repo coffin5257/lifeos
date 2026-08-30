@@ -39,13 +39,13 @@ Do not recursively scan unrelated private content. Archive is opt-in for histori
 - Preserve raw material and provenance.
 - Prefer updating an existing authoritative entry over creating a synonymous document.
 - Keep unknown facts unknown.
-- Route unclear fragments to `inbox/` rather than inventing a new system.
+- Route unclear fragments to the configured inbox rather than inventing a new system.
 - Analysis is read-only by default. Write only when the user explicitly requests initialization, capture, import, record, update, organization, or another scoped mutation.
 - Do not rewrite unrelated people, projects, or areas during a focused task.
 
-## 5. Semantic locations
+## 5. Personalized structure
 
-Only create locations that the user needs:
+The semantics are stable; directory names and layout are not. Follow the path mapping in `.lifeos/manifest.yaml`, the user's language, and any existing structure. The following names are defaults and examples, not requirements:
 
 - `me/` — identity, priorities, principles, and major decisions;
 - `inbox/` — uncategorized capture awaiting later judgment;
@@ -59,12 +59,15 @@ Only create locations that the user needs:
 - `knowledge/` — compiled topic knowledge with explicit sources;
 - `archive/` — historical material kept in its original semantic domain.
 
-Absence of a directory is valid. Structure follows actual use.
+The user may rename, translate, nest, merge, or omit these locations. Record the effective mapping in `.lifeos/manifest.yaml` so future agents use the same structure. Absence of a directory is valid. Structure follows actual use.
 
-## 6. Privacy and safety
+Generated content, headings, filenames, and templates should follow the user's preferred language and naming conventions. Internal runtime rules may remain in their source language.
 
-- A personal LifeOS repository is private by default.
-- Never commit credentials, tokens, private keys, authentication codes, or secret environment values.
+## 6. Storage, privacy, and safety
+
+- LifeOS is a collection of local files and does not require a repository, remote host, or sync provider.
+- Version control and sync are independent user choices. Do not initialize, configure, or recommend them unless requested.
+- Never store credentials, tokens, private keys, authentication codes, or secret environment values in LifeOS content.
 - Do not send private content to external systems unless the user authorized that system and scope.
 - Separate reversible suggestions from destructive cleanup.
 - Preview migrations that move, rename, or rewrite existing user content.

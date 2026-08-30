@@ -16,10 +16,11 @@ LifeOS evolves from observed use. Do not expand it merely because a capability m
 | Observed need | Durable artifact |
 |---|---|
 | A repeated workflow with stable inputs, decisions, and output | Skill |
-| A constraint that must hold across several workflows | Policy in agent instructions or `system/` |
+| A constraint that must hold across several workflows | Policy in agent instructions or `.lifeos/` |
 | Repeated documents with the same meaningful shape | Template |
 | A mechanically detectable failure | Doctor or lint check |
 | Repeated transfer from one external system | Connector or importer |
+| A recurring time- or event-triggered action | Automation or hook |
 | Domain-specific vocabulary, structure, and safety boundary | Domain capability pack |
 | A structure that now causes conflicts or retrieval failures | Previewable migration |
 | A one-off task | No new artifact |
@@ -39,6 +40,22 @@ Every proposal should state:
 - how to disable or remove it.
 
 Offer no more than a few high-value proposals at once.
+
+## Content maintenance
+
+Evolution is not limited to adding structure. When evidence changes, update the authoritative current entry, preserve the old evidence, and archive state that is no longer current. Suggest periodic review only when content freshness is causing real decision or retrieval problems.
+
+A content-maintenance proposal should identify:
+
+- which current entry has become stale or contradictory;
+- the newer evidence that justifies an update;
+- whether the change is fact, inference, decision, or action;
+- what historical state should remain traceable;
+- how the user can verify that the updated entry is now authoritative.
+
+## Structure changes
+
+Language, directory names, nesting, and enabled domains belong to the user. When structure changes, update the mapping in `.lifeos/manifest.yaml` and all affected agent instructions or links. Do not force the default English path names back into a personalized instance.
 
 ## Skills
 
@@ -62,14 +79,29 @@ A policy protects the whole system. A skill implements one recurring workflow. D
 
 Templates reduce repeated decisions but are not mandatory forms. Keep only fields that affect later retrieval, verification, or action. Remove empty ceremonial sections.
 
+## Automations and hooks
+
+Create an automation only when a recurring trigger and desired outcome are both stable. Keep the durable behavior agent-neutral, then use the smallest platform-specific adapter required by the user's actual environment.
+
+Before enabling an automation, state:
+
+- its trigger and cadence;
+- the files and private data it reads or writes;
+- whether it calls an external service;
+- how failures are surfaced;
+- how it is paused or removed;
+- the first bounded verification run.
+
+Do not create background jobs, scheduled tasks, hooks, or external notifications during onboarding. They require separate user authorization when a real use case appears.
+
 ## Migrations
 
 Before changing established structure:
 
-1. audit current and uncommitted state;
+1. audit the current filesystem state and any configured backup or version history;
 2. identify authoritative entries and conflicts;
 3. preview moves, renames, and rewritten links;
 4. preserve raw evidence and history;
 5. apply the bounded migration;
 6. verify links and the motivating workflow;
-7. record the migration in `.lifeos.yaml` only if migration history becomes necessary.
+7. update `.lifeos/manifest.yaml` and record migration history only when it serves a real recovery or compatibility need.
