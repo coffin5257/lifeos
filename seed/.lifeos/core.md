@@ -66,6 +66,10 @@ Generated content, headings, filenames, and templates should follow the user's p
 ## 6. Storage, privacy, and safety
 
 - LifeOS is a collection of local files and does not require a repository, remote host, or sync provider.
+- The LifeOS workspace is the durable boundary for important original sources and lasting outputs such as current state, decisions, knowledge, reusable material, and finished deliverables. It is not a general-purpose workbench.
+- Use a separate working directory outside the LifeOS workspace for temporary downloads, intermediate code, conversion steps, builds, dependencies, caches, logs, and experiments.
+- Promote only important sources, durable results, and necessary provenance back into LifeOS. Do not copy an entire working directory into the workspace merely because it was used to produce a result.
+- Intermediate work should be reproducible or safely disposable. Never make a temporary working directory the only home of irreplaceable source material or a finished result.
 - Version control and sync are independent user choices. Do not initialize, configure, or recommend them unless requested.
 - Never store credentials, tokens, private keys, authentication codes, or secret environment values in LifeOS content.
 - Do not send private content to external systems unless the user authorized that system and scope.

@@ -11,6 +11,9 @@ Build LifeOS in the local directory chosen by the user. It may be a new folder o
 - If the user separately asks for version control, sync, or backup, treat that as an independent choice.
 - If no target directory is stated or clear from the current workspace, ask one concise question before writing.
 - If the directory already contains material, inspect only its top-level structure and relevant agent instructions. Preserve existing content and merge rather than overwrite.
+- Treat the LifeOS workspace as a durable knowledge and output boundary, not as a general-purpose workbench.
+- Put temporary downloads, intermediate code, conversions, builds, caches, logs, and experiments in a separate working directory outside the LifeOS workspace.
+- Write back only important sources, durable results, and the provenance needed to understand them. Temporary work should remain reproducible or safely disposable.
 
 ## 2. Inspect the agent environment
 
@@ -52,6 +55,7 @@ Through a short conversation, establish:
 - the most important outcomes for the next 30–90 days;
 - expected source systems and inputs;
 - privacy, read, and write boundaries;
+- the preferred external working-directory location, if the user already has one;
 - preferred collaboration style and agent proactivity;
 - the first real workflow to complete.
 
@@ -66,6 +70,7 @@ Before broad creation, summarize:
 - the proposed language and semantic structure;
 - relevant connectors that are ready, need authorization, are absent, or are intentionally skipped;
 - the few files and directories worth creating now;
+- where temporary and intermediate work will happen outside the LifeOS workspace;
 - what will deliberately remain absent;
 - unresolved facts.
 
@@ -107,13 +112,16 @@ If `.lifeos/manifest.yaml` is useful for continuity, record:
 - semantic path mapping;
 - only the capabilities actually enabled;
 - only relevant connector presence, authorization, and verification status;
-- storage, sync, and version control as user choices.
+- storage, sync, and version control as user choices;
+- the external working-directory policy and a path only when the user has chosen one.
 
 Do not create skills, hooks, or automations at the beginning.
 
 ## 7. Complete one golden path
 
 Use the user's real situation to complete one useful end-to-end action. Preserve raw evidence separately from current state and judgment. Show the user where information went and why.
+
+Perform disposable or machine-specific work outside the LifeOS workspace. Before finishing, promote only the important source material, durable output, and necessary provenance into the workspace; do not copy back the whole working directory.
 
 Examples include capturing one idea, creating one active project with a completion condition, saving one source and deriving a separately labeled judgment, recording one decision, or establishing one current area state.
 
@@ -142,6 +150,7 @@ Report:
 - what remains intentionally absent;
 - connector status and any user authorization still needed;
 - that storage, sync, and version control remain independent user choices;
+- where future intermediate work should happen and what is allowed to be written back;
 - when an evolution review would become useful.
 
 Do not turn the ending into a large speculative roadmap.

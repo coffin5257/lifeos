@@ -18,6 +18,14 @@ working style. Do not assume I want Git.
 
 The agent first understands the user's real need, then creates the smallest useful system in a user-chosen local location. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
 
+## The workspace keeps only what is worth carrying forward
+
+A user's LifeOS workspace is a durable personal space that can be preserved, backed up, and synchronized. It is not the agent's general-purpose workbench. It primarily holds important original sources and durable outputs distilled from real work, such as current state, decisions, knowledge, reusable material, and finished deliverables.
+
+When a task requires temporary downloads, intermediate code, file conversion, builds, caches, or experimentation, the agent should use a separate working directory outside the LifeOS workspace. When the work is complete, it writes back only the sources, final results, and provenance the user actually needs to retain. Intermediate scripts, dependencies, build artifacts, logs, and temporary copies remain outside by default and should be reproducible or safely disposable.
+
+This keeps the LifeOS workspace small, understandable, and portable, so the user can later choose Git, cloud storage, a NAS, or another sync method without carrying machine-specific working state with it.
+
 ## What the seed contains
 
 - [`START.md`](START.md): the starting guide an agent follows;

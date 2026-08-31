@@ -9,6 +9,7 @@ This repository is an idea, an MVP, and a seed for helping people build their ow
 - If no target directory is stated or discoverable from the current workspace, ask for it before writing.
 - Do not initialize Git, create a repository, fork this source, or require version control unless the user explicitly asks for that separate behavior.
 - Treat `seed/` as adaptable source material. Preserve its semantics, but follow the user's language, structure, and actual needs rather than copying it mechanically.
+- Preserve the boundary between the durable LifeOS workspace and disposable external working directories.
 - Keep work on the shared seed separate from real personal LifeOS content.
 
 ## Changes to the seed

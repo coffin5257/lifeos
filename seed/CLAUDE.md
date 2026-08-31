@@ -19,6 +19,8 @@ Before acting on a LifeOS task:
 - Never invent missing personal facts. Mark them as unknown or ask only when the answer would materially change the result.
 - Never expose private LifeOS content in public artifacts, prompts, commits, or remote services without explicit authorization.
 - Do not assume the user wants Git or any other version-control or sync system. Use one only when explicitly requested.
+- Keep the LifeOS workspace limited to important sources and durable outputs. Use the external working directory configured in `.lifeos/manifest.yaml`, or a safe temporary location outside the workspace, for intermediate code, downloads, conversions, builds, dependencies, caches, logs, and experiments.
+- Write back only material worth retaining and the provenance needed to understand it. Never leave irreplaceable input or a finished result only in a disposable working directory.
 - Follow the content language and semantic path mapping in `.lifeos/manifest.yaml`; do not force default English filenames or directories into a personalized instance.
 
 ## Completion report

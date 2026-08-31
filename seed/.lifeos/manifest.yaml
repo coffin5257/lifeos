@@ -29,5 +29,9 @@ privacy:
   external_sharing: explicit_only
 storage:
   format: local_files
+  workspace_content: durable_only
+  work_directory:
+    location: outside_workspace
+    path: null
   version_control: user_choice
   sync: user_choice
