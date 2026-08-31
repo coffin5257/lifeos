@@ -59,6 +59,21 @@ A content-maintenance proposal should identify:
 
 Language, directory names, nesting, and enabled domains belong to the user. When structure changes, update the mapping in `.lifeos/manifest.yaml` and all affected agent instructions or links. Do not force the default English path names back into a personalized instance.
 
+The `.lifeos/` control plane is the small exception: while an installed Agent entrypoint refers to it, keep `manifest.yaml`, `core.md`, `connectors.md`, and `evolution.md` at their stable paths. Personalize content structure rather than silently breaking those references.
+
+## Storage, backup, and sync
+
+Version control, backup, and sync remain user choices. Before enabling one, state:
+
+- the destination, owner, and private or public visibility;
+- which sensitive content is included or excluded;
+- encryption expectations and where credentials remain stored;
+- conflict behavior and history retention;
+- how one representative file will be restored and verified;
+- how the integration can be disabled without losing the local workspace.
+
+Do not describe Git history as a complete backup, and never publish a LifeOS workspace by default.
+
 ## Skills
 
 Do not create a skill merely to document a single successful prompt. A skill is justified when the workflow has stable routing, safety constraints, or repeated steps that should behave consistently.

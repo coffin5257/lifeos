@@ -6,7 +6,7 @@ These semantic rules are stable. The user's directories, domains, templates, ski
 
 ## 1. Information layers
 
-Every durable item belongs primarily to one layer:
+These are semantic distinctions, not a required directory taxonomy. An existing personal system may express them differently. When LifeOS stores durable content, the user and future agents should still be able to tell which role the content is serving:
 
 1. **Raw evidence** — source documents, transcripts, chats, recordings, exports, and original user input. Preserve the original and its provenance.
 2. **Current state** — priorities, current roles, active project state, current relationship context, and still-valid action items.
@@ -14,7 +14,7 @@ Every durable item belongs primarily to one layer:
 4. **Compiled knowledge** — topic pages rebuilt from named sources. It is a retrieval view, not the source of truth.
 5. **Archive** — historical evidence or old state that remains traceable but is not assumed to be current.
 
-Content may link across layers, but one layer must not impersonate another. A summary does not replace a transcript. A discussion does not become a decision. A wiki page does not become raw evidence. An archived action item is not current work.
+One item may participate in more than one distinction, but one role must not impersonate another. A summary does not replace a transcript. A discussion does not become a decision. A wiki page does not become raw evidence. An archived action item is not current work.
 
 ## 2. Source priority and time
 
@@ -67,10 +67,13 @@ Generated content, headings, filenames, and templates should follow the user's p
 
 - LifeOS is a collection of local files and does not require a repository, remote host, or sync provider.
 - The LifeOS workspace is the durable boundary for important original sources and lasting outputs such as current state, decisions, knowledge, reusable material, and finished deliverables. It is not a general-purpose workbench.
-- Use a separate working directory outside the LifeOS workspace for temporary downloads, intermediate code, conversion steps, builds, dependencies, caches, logs, and experiments.
-- Promote only important sources, durable results, and necessary provenance back into LifeOS. Do not copy an entire working directory into the workspace merely because it was used to produce a result.
-- Intermediate work should be reproducible or safely disposable. Never make a temporary working directory the only home of irreplaceable source material or a finished result.
+- Use a separate working directory outside the LifeOS workspace for implementation, temporary downloads, intermediate code, conversion steps, builds, dependencies, caches, logs, and experiments.
+- Disposable scratch work should prefer a user-private, non-synchronized location. Work that is itself a durable code or project workspace may remain independently managed and versioned outside LifeOS. Apply protections appropriate to the source data's sensitivity in either case.
+- Promote only important sources, durable LifeOS results, project references, and necessary provenance back into LifeOS. Do not copy an entire working directory or project repository into the workspace merely because it was used to produce a result.
+- Intermediate work should be reproducible or safely disposable. Verify promoted results before cleanup. Never make a temporary working directory the only home of irreplaceable source material or a finished result.
+- Do not delete original input or an external working directory without explicit user authorization. Report what was removed and whether it is recoverable.
 - Version control and sync are independent user choices. Do not initialize, configure, or recommend them unless requested.
+- Before enabling version control, backup, or sync, confirm the destination and visibility, sensitive-content scope, encryption expectations, include and exclude rules, conflict behavior, history retention, and one recovery path. Default to private visibility. Git history alone is not a backup.
 - Never store credentials, tokens, private keys, authentication codes, or secret environment values in LifeOS content.
 - Do not send private content to external systems unless the user authorized that system and scope.
 - Separate reversible suggestions from destructive cleanup.

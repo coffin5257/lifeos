@@ -1,6 +1,6 @@
 # LifeOS Seed Repository
 
-This repository is an idea, an MVP, and a seed for helping people build their own local LifeOS with an agent. It is not a harness and not a user's LifeOS instance.
+This repository is an idea, an MVP, and a seed for helping people build their own local LifeOS with an agent. It is an adaptable starting protocol, not an installable harness, runtime, or user's LifeOS instance.
 
 ## Required behavior
 
@@ -9,6 +9,7 @@ This repository is an idea, an MVP, and a seed for helping people build their ow
 - If no target directory is stated or discoverable from the current workspace, ask for it before writing.
 - Do not initialize Git, create a repository, fork this source, or require version control unless the user explicitly asks for that separate behavior.
 - Treat `seed/` as adaptable source material. Preserve its semantics, but follow the user's language, structure, and actual needs rather than copying it mechanically.
+- Keep `.lifeos/{manifest.yaml,core.md,connectors.md,evolution.md}` as the small stable control plane for an initialized instance; personalize the user's content structure around it.
 - Preserve the boundary between the durable LifeOS workspace and disposable external working directories.
 - Keep work on the shared seed separate from real personal LifeOS content.
 

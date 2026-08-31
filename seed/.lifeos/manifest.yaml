@@ -1,5 +1,5 @@
 schema_version: 1
-core_version: 0.1.0
+core_version: 0.2.0
 status: uninitialized
 initialized_at: null
 agents: []
@@ -11,6 +11,7 @@ personalization:
   content_language: null
   naming_language: null
   collaboration_style: null
+  preferences_file: null
 structure:
   mode: personalized
   paths:

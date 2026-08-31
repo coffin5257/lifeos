@@ -1,3 +1,3 @@
 # LifeOS moved from installation to a seed
 
-LifeOS is not a package or harness that should be installed mechanically. Read [`START.md`](START.md) and use the repository as adaptable seed material for building the user's own local LifeOS.
+LifeOS is not a package, installable harness, or runtime. Read [`START.md`](START.md) and use its adaptable starting protocol to build the user's own local LifeOS.

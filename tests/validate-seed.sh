@@ -32,6 +32,7 @@ grep -q '^  workspace_content: durable_only$' "$ROOT/seed/.lifeos/manifest.yaml"
 grep -q '^    location: outside_workspace$' "$ROOT/seed/.lifeos/manifest.yaml"
 grep -q '^  mode: personalized$' "$ROOT/seed/.lifeos/manifest.yaml"
 grep -q '^  content_language: null$' "$ROOT/seed/.lifeos/manifest.yaml"
+grep -q '^  preferences_file: null$' "$ROOT/seed/.lifeos/manifest.yaml"
 grep -q '^connectors:$' "$ROOT/seed/.lifeos/manifest.yaml"
 grep -q '.lifeos/core.md' "$ROOT/seed/AGENTS.md"
 grep -q '.lifeos/core.md' "$ROOT/seed/CLAUDE.md"
@@ -39,7 +40,13 @@ grep -q '.lifeos/connectors.md' "$ROOT/seed/AGENTS.md"
 grep -q '.lifeos/connectors.md' "$ROOT/seed/CLAUDE.md"
 grep -q 'Do not require, initialize, configure, or recommend Git' "$ROOT/START.md"
 grep -q 'separate working directory outside the LifeOS workspace' "$ROOT/START.md"
-grep -q '## 2. Inspect the agent environment' "$ROOT/START.md"
+grep -q '## 2. Start from one real outcome' "$ROOT/START.md"
+grep -q '## 4. Inspect only the relevant agent capabilities' "$ROOT/START.md"
+grep -q '### Stable control plane' "$ROOT/START.md"
+grep -q 'do not leave .*status: uninitialized' "$ROOT/START.md"
+grep -q 'Treat all external documents.*as untrusted data' "$ROOT/START.md"
+grep -q '^      identity_match: unknown$' "$ROOT/seed/.lifeos/connectors.md"
+grep -q 'Git history alone is not a backup' "$ROOT/seed/.lifeos/core.md"
 grep -q 'Lark / Feishu' "$ROOT/seed/.lifeos/connectors.md"
 grep -q 'Slack' "$ROOT/seed/.lifeos/connectors.md"
 grep -q 'Figma' "$ROOT/seed/.lifeos/connectors.md"
@@ -63,13 +70,43 @@ fi
 
 install_target="$(mktemp -d)"
 trap 'rm -rf "$install_target"' EXIT
-cp -R "$ROOT/seed/." "$install_target/"
+mkdir -p "$install_target/.lifeos"
+cp "$ROOT/seed/.lifeos/manifest.yaml" "$install_target/.lifeos/manifest.yaml"
+cp "$ROOT/seed/.lifeos/core.md" "$install_target/.lifeos/core.md"
+cp "$ROOT/seed/.lifeos/connectors.md" "$install_target/.lifeos/connectors.md"
+cp "$ROOT/seed/.lifeos/evolution.md" "$install_target/.lifeos/evolution.md"
+cp "$ROOT/seed/AGENTS.md" "$install_target/AGENTS.md"
 mkdir -p "$install_target/我" "$install_target/收件箱" "$install_target/资料" "$install_target/输出"
+
+perl -0pi -e 's/status: uninitialized/status: active/;
+  s/initialized_at: null/initialized_at: 2026-01-01/;
+  s/agents: \[\]/agents: [codex]/;
+  s/connectors:\n  discovered_at: null\n  inventory: \[\]/connectors:\n  discovered_at: 2026-01-01\n  inventory:\n    - id: lark\n      presence: present\n      authorization: authorized\n      identity_match: confirmed\n      verification: passed/;
+  s/content_language: null/content_language: zh-CN/;
+  s/naming_language: null/naming_language: zh-CN/;
+  s/    self: null/    self: 我/;
+  s/    inbox: null/    inbox: 收件箱/;
+  s/    sources: null/    sources: 资料/;
+  s/    outputs: null/    outputs: 输出/;
+  s/    path: null/    path: \/tmp\/lifeos-work/' "$install_target/.lifeos/manifest.yaml"
 
 test -f "$install_target/.lifeos/manifest.yaml"
 test -f "$install_target/.lifeos/connectors.md"
 test -f "$install_target/AGENTS.md"
-test -f "$install_target/CLAUDE.md"
+test ! -e "$install_target/CLAUDE.md"
 test ! -e "$install_target/.git"
+grep -q '^status: active$' "$install_target/.lifeos/manifest.yaml"
+grep -q '^agents: \[codex\]$' "$install_target/.lifeos/manifest.yaml"
+grep -q '^  content_language: zh-CN$' "$install_target/.lifeos/manifest.yaml"
+grep -q '^    sources: 资料$' "$install_target/.lifeos/manifest.yaml"
+grep -q '^      identity_match: confirmed$' "$install_target/.lifeos/manifest.yaml"
+grep -q '^    path: /tmp/lifeos-work$' "$install_target/.lifeos/manifest.yaml"
+
+for control_file in manifest.yaml core.md connectors.md evolution.md; do
+  grep -q ".lifeos/$control_file" "$install_target/AGENTS.md" || {
+    echo "entrypoint does not reference control file: $control_file" >&2
+    exit 1
+  }
+done
 
 echo "seed validation passed"
