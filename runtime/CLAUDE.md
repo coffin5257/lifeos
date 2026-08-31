@@ -9,7 +9,8 @@ Before acting on a LifeOS task:
 1. Read `.lifeos/manifest.yaml` for the instance configuration.
 2. Read `.lifeos/core.md` completely.
 3. If the user asks how the system should grow, or a repeated workflow suggests a new capability, read `.lifeos/evolution.md` completely.
-4. Read only the personal files relevant to the current task. Do not scan the LifeOS broadly for private context.
+4. Before an external-source, import, or integration task, read `.lifeos/connectors.md` completely and inspect the current agent environment before proposing new setup.
+5. Read only the personal files relevant to the current task. Do not scan the LifeOS broadly for private context.
 
 ## Authority
 

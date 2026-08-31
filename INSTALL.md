@@ -22,7 +22,25 @@ Before writing into an existing directory:
 - preserve existing user content;
 - propose a merge when an existing instruction file must be integrated rather than overwritten.
 
-## 2. Begin from a real outcome
+## 2. Run connector preflight
+
+Before asking the user to configure integrations, inspect the current Codex or Claude Code environment using non-mutating discovery. Look for built-in connectors, connected apps, MCP servers and tools, installed plugins or skills, and relevant local CLIs.
+
+Pay particular attention to sources the user may already rely on, including Lark / Feishu, Slack, Figma, Notion, calendars, email, drives, and task managers. These are examples, not mandatory setup.
+
+For every connector that becomes relevant, distinguish:
+
+- whether the integration is present;
+- whether it is authorized for the current user;
+- whether a minimal read-only operation has been verified.
+
+If a relevant integration is present but not authorized, tell the user what is missing and guide them to the current agent environment's native authorization flow. Let the user complete login, OAuth, device confirmation, or consent. Never ask for credentials or tokens in chat or store them in LifeOS.
+
+If a relevant integration is absent, explain the workflow it would enable and ask whether the user wants to configure it. Missing connectors do not block the local LifeOS initialization unless the user's chosen golden path depends on them.
+
+Read `runtime/.lifeos/connectors.md` for the complete detection, authorization, verification, and data-boundary contract.
+
+## 3. Begin from a real outcome
 
 Ask what the user most wants LifeOS to help with now. Encourage one concrete situation, such as:
 
@@ -35,7 +53,7 @@ Ask what the user most wants LifeOS to help with now. Encourage one concrete sit
 
 Do not begin by asking the user to enumerate every life domain.
 
-## 3. Gather the minimum personal context
+## 4. Gather the minimum personal context
 
 Through a short conversation, establish only what is needed:
 
@@ -51,7 +69,9 @@ Through a short conversation, establish only what is needed:
 
 Ask one compact group of questions at a time. Accept incomplete answers. Never infer sensitive or missing facts from stereotypes or weak evidence.
 
-## 4. Reflect the proposed instance
+Use the user's expected sources to connect the preflight inventory to real needs. Do not recommend authorization for unrelated services.
+
+## 5. Reflect the proposed instance
 
 Before broad creation, summarize:
 
@@ -59,13 +79,14 @@ Before broad creation, summarize:
 - what LifeOS will help with first;
 - the proposed current priorities;
 - the proposed content language and directory mapping;
+- relevant connectors already ready, awaiting authorization, missing, or deliberately skipped;
 - which minimal files and directories will be created;
 - what will deliberately not be created yet;
 - any unresolved personal facts.
 
 If the user's request already authorizes initialization, this reflection is for correction, not a second permission gate. Incorporate corrections and continue.
 
-## 5. Install the self-contained runtime
+## 6. Install the self-contained runtime
 
 Install the self-contained rules from the distribution's `runtime/` directory into the target directory:
 
@@ -74,6 +95,7 @@ Install the self-contained rules from the distribution's `runtime/` directory in
   .lifeos/
     manifest.yaml
     core.md
+    connectors.md
     evolution.md
   AGENTS.md or CLAUDE.md
   templates/
@@ -85,7 +107,7 @@ Use the exact runtime files from the same source revision as this document. Do n
 
 If the target already contains `AGENTS.md` or `CLAUDE.md`, integrate the LifeOS loading contract into the existing file while preserving its unrelated rules. Never silently overwrite existing agent instructions.
 
-## 6. Create the minimum personal system
+## 7. Create the minimum personal system
 
 The following is a default semantic shape, not a required English directory tree:
 
@@ -112,11 +134,12 @@ Update `{target}/.lifeos/manifest.yaml`:
 - record the content language and effective path mapping;
 - list only the agent environments actually in use;
 - list only capabilities actually enabled;
+- record only relevant connector presence, authorization, and verification status;
 - preserve `version_control: user_choice` unless the user explicitly chooses otherwise.
 
 Do not create skills during onboarding.
 
-## 7. Complete one golden path
+## 8. Complete one golden path
 
 Use the user's concrete situation to complete one useful end-to-end action. Examples:
 
@@ -128,7 +151,7 @@ Use the user's concrete situation to complete one useful end-to-end action. Exam
 
 Show the user where evidence, current state, judgment, and actions were placed.
 
-## 8. Finish with a usable map
+## 9. Finish with a usable map
 
 Report:
 
@@ -136,6 +159,7 @@ Report:
 - the first workflow that works;
 - a few natural-language examples for the next interaction;
 - what remains intentionally absent;
+- which relevant connectors are ready and which still need user setup or authorization;
 - that storage, sync, and version control remain the user's independent choice;
 - when an evolution review would become useful.
 

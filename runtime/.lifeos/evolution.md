@@ -41,6 +41,8 @@ Every proposal should state:
 
 Offer no more than a few high-value proposals at once.
 
+Before proposing a new connector, read `.lifeos/connectors.md` and check whether the current Codex or Claude Code environment already provides the required integration. Prefer configuring and authorizing an existing capability over building a duplicate.
+
 ## Content maintenance
 
 Evolution is not limited to adding structure. When evidence changes, update the authoritative current entry, preserve the old evidence, and archive state that is no longer current. Suggest periodic review only when content freshness is causing real decision or retrieval problems.

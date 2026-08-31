@@ -4,6 +4,9 @@ status: uninitialized
 initialized_at: null
 agents: []
 enabled_capabilities: []
+connectors:
+  discovered_at: null
+  inventory: []
 personalization:
   content_language: null
   naming_language: null

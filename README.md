@@ -54,6 +54,21 @@ outputs/
 
 `people/`、`project/`、`area/`、`minutes/`、`knowledge/` 等目录，会在第一个真实任务需要时自然出现。初始化阶段不会安装 skill。
 
+## Connector 预检
+
+初始化前，Agent 会先检查当前 Codex / Claude Code 环境已经提供了哪些 connector、connected app、MCP、plugin、skill 或本地 CLI，再结合用户真正使用的数据源决定是否需要设置。
+
+例如：
+
+- Lark / 飞书：现有 Lark CLI、connector、plugin 或 MCP；
+- Slack：现有 Slack connector、connected app、plugin 或 MCP；
+- Figma：现有 Figma integration、plugin 或 MCP；
+- Notion：现有 Notion connector、connected app、plugin 或 MCP。
+
+系统会区分“能力存在”“已经授权”和“最小只读验证通过”。如果能力存在但用户尚未授权，会提醒用户通过当前 Agent 环境的原生流程完成登录或 OAuth，再做一次最小只读验证。不会让用户把 token 或密码写进 LifeOS。
+
+没有相关集成时，Agent 会说明它能解决什么问题，并询问用户是否现在设置；与当前需求无关的 connector 不会被推荐，缺失 connector 也不会阻塞基础的本地初始化。
+
 ## 核心原则
 
 LifeOS 把信息分为五层：
@@ -64,7 +79,7 @@ LifeOS 把信息分为五层：
 4. 编译知识：可从来源重新生成的主题知识；
 5. 历史归档：保留但默认不参与当前判断的旧上下文。
 
-完整规则见 [`runtime/.lifeos/core.md`](runtime/.lifeos/core.md)，渐进演进机制见 [`runtime/.lifeos/evolution.md`](runtime/.lifeos/evolution.md)。
+完整规则见 [`runtime/.lifeos/core.md`](runtime/.lifeos/core.md)，Connector 协议见 [`runtime/.lifeos/connectors.md`](runtime/.lifeos/connectors.md)，渐进演进机制见 [`runtime/.lifeos/evolution.md`](runtime/.lifeos/evolution.md)。
 
 ## 存储与隐私
 
