@@ -2,13 +2,15 @@
 
 [中文](README.md) · **English**
 
+> **Let AI take over your life.**
+
 LifeOS is an idea, an MVP, and a seed: a way for anyone to start with the Codex or Claude Code they already use and grow a personal system that genuinely fits them.
 
 It is not an installable harness or runtime, not a fixed directory tree, not a finished product, and not a Git repository template. It provides a starting protocol that the user and agent may rewrite: how to understand the user, separate evidence from current state and judgment, reuse existing integrations, and evolve the system through real use.
 
 ## Start with one prompt
 
-The repository is currently private, so only its owner and invited collaborators can read it. During private testing, the agent itself must also be able to access the repository; otherwise give the agent the contents of `START.md` directly. Once public, a user can give this prompt to Codex or Claude Code:
+This is a public repository. A user can give this prompt directly to Codex or Claude Code:
 
 ```text
 Read https://github.com/coffin5257/lifeos/blob/main/START.md and help me build

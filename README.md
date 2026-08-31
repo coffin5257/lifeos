@@ -2,13 +2,15 @@
 
 **中文** · [English](README.en.md)
 
+> **让 AI 接管你的人生。**
+
 LifeOS 是一个 idea、一个 MVP、也是一颗种子：让每个人都能从自己正在使用的 Codex 或 Claude Code 开始，在本地长出一套真正属于自己的个人系统。
 
 它不是需要安装的 harness 或运行时，不是一棵固定目录，不是一套完整产品，也不是 Git 仓库模板。它提供的是一份可以被用户和 Agent 改写的起步协议：如何理解用户、如何组织证据与当前状态、如何接入用户已有的工具，以及如何随着真实使用逐步演进。
 
 ## 一句话开始
 
-当前仓库是 private，只有所有者和获邀协作者能读取。私测时，Agent 本身也必须能访问这个 private 仓库；否则需要把 `START.md` 的内容直接交给 Agent。未来公开后，用户只需要把下面这句话交给自己的 Codex 或 Claude Code：
+这是一个公开仓库。用户只需要把下面这句话交给自己的 Codex 或 Claude Code：
 
 ```text
 请阅读 https://github.com/coffin5257/lifeos/blob/main/START.md，
