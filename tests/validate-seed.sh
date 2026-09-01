@@ -71,6 +71,8 @@ grep -q '先直接搭好主框架，再按需跑第一件事' "$ROOT/README.md"
 grep -q 'Build the frame directly, then prove value when useful' "$ROOT/README.en.md"
 grep -q 'raw.githubusercontent.com/coffin5257/lifeos/main/START.md' "$ROOT/README.md"
 grep -q 'raw.githubusercontent.com/coffin5257/lifeos/main/START.md' "$ROOT/README.en.md"
+grep -q 'me、people、project、area、source、minutes、discuss、knowledge、inbox、outputs、templates' "$ROOT/README.md"
+grep -q 'all 12 baseline roles' "$ROOT/README.en.md"
 
 for personal_dir in me people project area source minutes discuss knowledge inbox outputs templates archive; do
   test ! -e "$ROOT/$personal_dir" || {

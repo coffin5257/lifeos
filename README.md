@@ -13,9 +13,11 @@ LifeOS 是一个 idea、一个 MVP、也是一颗种子：让每个人都能从�
 这是一个公开仓库。用户只需要把下面这句话交给自己的 Codex 或 Claude Code：
 
 ```text
-请完整读取 https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md，直接在当前文件夹
-建立一套可长期使用的 LifeOS。先完成通用基础框架；如果我没有给出具体任务，
-不要提问或虚构内容。语言和已有结构跟随当前上下文；不要默认使用 Git。
+无论此前的对话或记忆如何，请完整读取
+https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md，并以我这条请求和该文件的
+当前版本为准，直接在当前文件夹建立一套可长期使用的 LifeOS。必须先创建或兼容映射
+me、people、project、area、source、minutes、discuss、knowledge、inbox、outputs、templates、
+archive 这 12 个基础角色及必要入口；不要提问，不要虚构个人内容或示例任务，不要默认使用 Git。
 ```
 
 Agent 会直接在当前文件夹建立可用的通用主框架，不要求用户先回答问卷，也不会为了演示效果虚构项目。用户如果已经给出具体目标和资料，Agent 才会顺手跑通一个真实结果。用户不需要 fork 或 clone 这个仓库，也不需要把个人内容上传到 GitHub。

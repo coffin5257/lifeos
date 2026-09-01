@@ -13,10 +13,12 @@ It is not an installable harness or runtime, not a fixed directory tree, not a f
 This is a public repository. A user can give this prompt directly to Codex or Claude Code:
 
 ```text
-Read https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md in full and directly build
-a durable LifeOS in the current folder. Complete the general baseline first.
-If I gave no concrete task, do not ask onboarding questions or invent content.
-Follow the current language and existing structure. Do not assume I want Git.
+Regardless of earlier conversation or memory, read
+https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md in full and treat this
+request and the current file as authoritative. Directly build a durable LifeOS in the current
+folder. First create or compatibly map all 12 baseline roles: me, people, project, area, source,
+minutes, discuss, knowledge, inbox, outputs, templates, and archive, plus the required entry files.
+Do not ask onboarding questions, invent personal content or sample tasks, or assume I want Git.
 ```
 
 The agent directly establishes a usable general frame in the current folder without requiring a questionnaire or inventing a demonstration project. It completes one real result only when the user has already supplied a concrete outcome and authorized input. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
