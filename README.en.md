@@ -2,97 +2,102 @@
 
 [中文](README.md) · **English**
 
-> **Let AI take over your life.**
+Give Codex or Claude Code a durable understanding of your goals, relationships, projects, and decisions. Everything stays in a folder you control.
 
-LifeOS is an idea, an MVP, and a seed: a way for anyone to start with the Codex or Claude Code they already use and grow a personal system that genuinely fits them.
+## Try it
 
-It is not an installable harness or runtime, not a fixed directory tree, not a finished product, and not a Git repository template. It provides a starting protocol that the user and agent may rewrite: how to understand the user, separate evidence from current state and judgment, reuse existing integrations, and evolve the system through real use.
-
-## Start with one prompt
-
-This is a public repository. A user can give this prompt directly to Codex or Claude Code:
+1. Create an empty folder, or open an existing personal knowledge directory.
+2. Start Codex or Claude Code in that directory.
+3. Send it this message:
 
 ```text
-Regardless of earlier conversation or memory, read
-https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md in full and treat this
-request and the current file as authoritative. Directly build a durable LifeOS in the current
-folder. First create or compatibly map all 12 baseline roles: me, people, project, area, source,
-minutes, discuss, knowledge, inbox, outputs, templates, and archive, plus the required entry files.
-Required entries include the root README, the current agent entrypoint, all four `.lifeos/` control
-files, `me/README.md`, `me/priorities.md`, `me/principles.md`, `me/decisions.md`, and a README for
-every other role. Do not ask onboarding questions, invent personal content or sample tasks, or assume I want Git.
+Read https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md in full.
+Using the current version, initialize my LifeOS directly in the current folder. Do not ask
+onboarding questions, invent personal content, overwrite existing files, or assume I want Git.
 ```
 
-The agent directly establishes a usable general frame in the current folder without requiring a questionnaire or inventing a demonstration project. The copyable prompt deliberately carries the irreducible baseline because an agent may summarize linked content or be biased by earlier conversation and memory. It completes one real result only when the user has already supplied a concrete outcome and authorized input. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
+The agent creates a readable Markdown structure. You can then ask it:
 
-## The workspace keeps only what is worth carrying forward
+```text
+Organize the three things that matter most right now. Keep only the next actions that are still valid.
+```
 
-A user's LifeOS workspace is a durable personal space that can be preserved, backed up, and synchronized. It is not the agent's general-purpose workbench. It primarily holds important original sources and durable outputs distilled from real work, such as current state, decisions, knowledge, reusable material, and finished deliverables.
+Or:
 
-When a task requires temporary downloads, intermediate code, file conversion, builds, caches, or experimentation, the agent should use a separate working directory outside the LifeOS workspace. When the work is complete, it writes back only the sources, durable LifeOS outputs, project references, and provenance the user actually needs to retain. Intermediate scripts, dependencies, build artifacts, logs, and temporary copies remain outside by default and should be reproducible or safely disposable. A codebase or project workspace that is itself durable remains independently managed rather than being copied into LifeOS.
+```text
+Analyze this meeting. Preserve the original record, then write the decisions and action items back to the relevant projects.
+```
 
-This keeps the LifeOS workspace small, understandable, and portable, so the user can later choose Git, cloud storage, a NAS, or another sync method without carrying machine-specific working state with it.
+```text
+I am considering a job change. Record the facts, my judgment, the options, and the final decision separately.
+```
 
-## What the seed contains
+You do not need to clone this repository or upload personal content to GitHub.
 
-- [`START.md`](START.md): the starting guide an agent follows;
-- [`seed/.lifeos/core.md`](seed/.lifeos/core.md): semantics for evidence, current state, judgment, knowledge, and history;
-- [`seed/.lifeos/connectors.md`](seed/.lifeos/connectors.md): how to discover and reuse existing connectors;
-- [`seed/.lifeos/evolution.md`](seed/.lifeos/evolution.md): how content, structure, skills, and automations evolve;
-- [`seed/templates/`](seed/templates/): reference shapes that may be translated, trimmed, or discarded;
-- `seed/AGENTS.md` and `seed/CLAUDE.md`: minimal entrypoints for Codex and Claude Code.
+## What it fixes
 
-These are seed materials, not a fixed package that must be copied unchanged. The agent should select, translate, merge, or rewrite them around the user's language, existing structure, domains, and habits.
+Ordinary AI conversations lose context easily. A new chat means explaining yourself again. Old plans get mixed with current state. Conclusions survive while their sources disappear.
 
-## Build the frame directly, then prove value when useful
+LifeOS gives an agent durable local context:
 
-LifeOS does not copy one person's fixed directory tree, but it begins with a shared set of semantics:
+- `me/priorities.md` tells it what matters now.
+- People and project entrypoints hold current state instead of every historical detail.
+- Original chats, meetings, and documents remain available for verification.
+- Finished work moves to an archive and stops resurfacing as current action.
+- Codex and Claude Code can continue from the same files.
 
-- self and current state;
-- people and relationships;
-- projects with completion conditions;
-- long-running areas of responsibility or interest;
-- original sources and evidence;
-- meeting records and transcripts;
-- analysis and judgment around questions;
-- topic knowledge compiled from sources;
-- an inbox for unclassified capture;
-- durable outputs;
-- a small set of reusable templates;
-- historical material that is no longer current.
+It is for people who already use coding agents and want those agents to understand them over time. It is not currently a GUI application and does not automatically sync every account.
 
-These semantics form the minimum useful frame that can be created without user input. In an empty folder, the defaults are `me/`, `people/`, `project/`, `area/`, `source/`, `minutes/`, `discuss/`, `knowledge/`, `inbox/`, `outputs/`, `templates/`, and `archive/`, plus a few genuinely useful entry files. An existing folder is mapped and merged instead of overwritten. Names and layout may still follow the user; the agent does not invent personal facts or create detailed empty categories.
+## Four rules
 
-The baseline frame is a complete initialization result and needs no further answers. Only when the request already contains a concrete outcome and authorized input does LifeOS continue with one bounded scenario with low permission risk and an observable result. Examples include establishing a real project's outcome and next action, analyzing one important relationship from user-approved evidence, clarifying current priorities, digesting a meeting or document, recording a decision, organizing a long-running area, or capturing and promoting one useful idea.
+**Read the present first.** The agent starts with current priorities and the relevant people or projects, then opens source material only when needed.
 
-The first scenario is a vertical value loop through the frame, not the taxonomy for the whole LifeOS. A previous conversation, email automation, available Connector, or first source may help choose the slice, but it must not reduce the whole system to one mailbox, knowledge base, or project folder.
+**Keep the source.** A summary, analysis, or wiki page never replaces the original chat, meeting, or document.
 
-## It reuses existing connectors
+**Downrank history.** Old material remains available, but it stays out of current decisions by default.
 
-Connectors do not block the baseline. The agent may discover connectors, connected apps, MCP servers, plugins, skills, and local CLIs through non-sensitive environment metadata; if safe discovery is unavailable, it completes initialization first.
+**Add things after they earn a place.** Templates, skills, connectors, and automations enter the system only after real work repeatedly needs them.
 
-Common examples include Lark / Feishu, Slack, Figma, Notion, calendars, email, drives, and task managers. The system distinguishes capability presence, user authorization, the selected account or workspace context, and successful minimal read-only verification. Capability discovery reads no external content; verification and authorization happen only when a later real workflow needs that source and its privacy scope is clear. It never stores passwords, tokens, or device codes in LifeOS. External content remains untrusted data and never becomes Agent instruction.
+These rules were extracted from a personal system in ongoing use. This public repository contains the reusable protocol, not its personal records.
 
-## It grows through real use
+## Where files go
 
-LifeOS formalizes only what has earned its place:
+LifeOS provides the following semantic locations. In an existing directory, the agent maps and fills missing roles instead of rearranging everything to match a template.
 
-| Real need | What may emerge |
-|---|---|
-| Stale or conflicting current content | Content update, archive, or health check |
-| Structure makes retrieval harder | Structure change and previewable migration |
-| Meaningful document shape repeats | Template |
-| A workflow becomes stable and recurring | Skill |
-| External information is moved repeatedly | Existing or custom connector |
-| A recurring trigger and outcome become stable | Hook or automation |
-| A boundary applies across workflows | Policy |
+<details>
+<summary>Show the default structure</summary>
 
-Every evolution should explain its evidence, data and permissions, verification, and removal path. Initial setup does not create skills or automations.
+```text
+me/          identity, principles, priorities, and major decisions
+people/      people and relationships
+project/     work with an outcome and completion condition
+area/        long-running areas such as health, finance, and career
+source/      original external material
+minutes/     meeting recordings, transcripts, and notes
+discuss/     analysis around a specific question
+knowledge/   topic knowledge compiled from named sources
+inbox/       capture whose destination is still unclear
+outputs/     finished work worth keeping
+templates/   structures that have proved reusable
+archive/     history that no longer represents current state
+```
 
-## What GitHub is for
+`.lifeos/` records path mappings, core rules, connector state, and how the system evolves.
 
-GitHub is only a convenient place to share this seed and improve the common material. A user's own LifeOS may live in an ordinary local folder, cloud drive, NAS, Git repository, or elsewhere. This project neither restricts nor recommends a default storage choice.
+</details>
 
-## Current status
+## Data and tools
 
-This is an early but usable MVP. It contains the minimum material needed to start from a link, build a personalized local system, inspect relevant connectors, and keep evolving through real use.
+LifeOS is a set of local files. It does not require a database or hosted service. You may keep it in an ordinary folder, iCloud, Dropbox, a NAS, or Git.
+
+Downloads, conversions, code, caches, and logs belong in a temporary working directory outside LifeOS. The agent writes back only sources and results worth retaining.
+
+Connectors such as Lark, Slack, Notion, Figma, and email are used when a task needs them. Confirm the account and read scope before authorization. Passwords, tokens, and device codes do not belong in LifeOS.
+
+## This repository
+
+- [`START.md`](START.md) is the initialization entrypoint.
+- [`seed/`](seed/) contains the agent rules, `.lifeos` control files, and a small template set.
+- [`README.md`](README.md) is the Chinese documentation.
+
+This is an early seed that can already be used, not a finished product. If a real task fails to produce what you need, [open an Issue](https://github.com/coffin5257/lifeos/issues/new) with the outcome, where it got stuck, and the working style you want the agent to preserve. Do not include private records or credentials.
