@@ -13,7 +13,7 @@ LifeOS 是一个 idea、一个 MVP、也是一颗种子：让每个人都能从�
 这是一个公开仓库。用户只需要把下面这句话交给自己的 Codex 或 Claude Code：
 
 ```text
-请阅读 https://github.com/coffin5257/lifeos/blob/main/START.md，直接在当前文件夹
+请完整读取 https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md，直接在当前文件夹
 建立一套可长期使用的 LifeOS。先完成通用基础框架；如果我没有给出具体任务，
 不要提问或虚构内容。语言和已有结构跟随当前上下文；不要默认使用 Git。
 ```

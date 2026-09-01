@@ -13,7 +13,7 @@ It is not an installable harness or runtime, not a fixed directory tree, not a f
 This is a public repository. A user can give this prompt directly to Codex or Claude Code:
 
 ```text
-Read https://github.com/coffin5257/lifeos/blob/main/START.md and directly build
+Read https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md in full and directly build
 a durable LifeOS in the current folder. Complete the general baseline first.
 If I gave no concrete task, do not ask onboarding questions or invent content.
 Follow the current language and existing structure. Do not assume I want Git.
