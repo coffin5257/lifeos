@@ -17,10 +17,12 @@ LifeOS 是一个 idea、一个 MVP、也是一颗种子：让每个人都能从�
 https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md，并以我这条请求和该文件的
 当前版本为准，直接在当前文件夹建立一套可长期使用的 LifeOS。必须先创建或兼容映射
 me、people、project、area、source、minutes、discuss、knowledge、inbox、outputs、templates、
-archive 这 12 个基础角色及必要入口；不要提问，不要虚构个人内容或示例任务，不要默认使用 Git。
+archive 这 12 个基础角色。必要入口至少包括根 README、当前 Agent 的规则入口、`.lifeos/`
+四个控制文件、`me/README.md`、`me/priorities.md`、`me/principles.md`、`me/decisions.md`
+和其他角色的 README；不要提问，不要虚构个人内容或示例任务，不要默认使用 Git。
 ```
 
-Agent 会直接在当前文件夹建立可用的通用主框架，不要求用户先回答问卷，也不会为了演示效果虚构项目。用户如果已经给出具体目标和资料，Agent 才会顺手跑通一个真实结果。用户不需要 fork 或 clone 这个仓库，也不需要把个人内容上传到 GitHub。
+Agent 会直接在当前文件夹建立可用的通用主框架，不要求用户先回答问卷，也不会为了演示效果虚构项目。复制 prompt 特意保留了不可压缩的基础契约，因为 Agent 可能把链接内容摘要化，或者受到此前对话与记忆影响。用户如果已经给出具体目标和资料，Agent 才会顺手跑通一个真实结果。用户不需要 fork 或 clone 这个仓库，也不需要把个人内容上传到 GitHub。
 
 ## Workspace 只保留值得长期带走的东西
 

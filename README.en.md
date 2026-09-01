@@ -18,10 +18,12 @@ https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md in full and tr
 request and the current file as authoritative. Directly build a durable LifeOS in the current
 folder. First create or compatibly map all 12 baseline roles: me, people, project, area, source,
 minutes, discuss, knowledge, inbox, outputs, templates, and archive, plus the required entry files.
-Do not ask onboarding questions, invent personal content or sample tasks, or assume I want Git.
+Required entries include the root README, the current agent entrypoint, all four `.lifeos/` control
+files, `me/README.md`, `me/priorities.md`, `me/principles.md`, `me/decisions.md`, and a README for
+every other role. Do not ask onboarding questions, invent personal content or sample tasks, or assume I want Git.
 ```
 
-The agent directly establishes a usable general frame in the current folder without requiring a questionnaire or inventing a demonstration project. It completes one real result only when the user has already supplied a concrete outcome and authorized input. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
+The agent directly establishes a usable general frame in the current folder without requiring a questionnaire or inventing a demonstration project. The copyable prompt deliberately carries the irreducible baseline because an agent may summarize linked content or be biased by earlier conversation and memory. It completes one real result only when the user has already supplied a concrete outcome and authorized input. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
 
 ## The workspace keeps only what is worth carrying forward
 

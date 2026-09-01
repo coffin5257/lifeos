@@ -73,6 +73,8 @@ grep -q 'raw.githubusercontent.com/coffin5257/lifeos/main/START.md' "$ROOT/READM
 grep -q 'raw.githubusercontent.com/coffin5257/lifeos/main/START.md' "$ROOT/README.en.md"
 grep -q 'me、people、project、area、source、minutes、discuss、knowledge、inbox、outputs、templates' "$ROOT/README.md"
 grep -q 'all 12 baseline roles' "$ROOT/README.en.md"
+grep -q '`me/priorities.md`、`me/principles.md`、`me/decisions.md`' "$ROOT/README.md"
+grep -q '`me/priorities.md`, `me/principles.md`, `me/decisions.md`' "$ROOT/README.en.md"
 
 for personal_dir in me people project area source minutes discuss knowledge inbox outputs templates archive; do
   test ! -e "$ROOT/$personal_dir" || {
