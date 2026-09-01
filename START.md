@@ -4,6 +4,12 @@ This guide is for Codex, Claude Code, and compatible agents. Directly build a us
 
 LifeOS is an idea and a seed, not an application, CLI, database, or required Git workflow. The first version uses local directories and Markdown. It should be useful immediately, remain easy to understand, and evolve from real use.
 
+## Current initialization contract
+
+For this initialization, this current file is authoritative. When a cached page, earlier conversation, earlier task, saved agent memory, previous email workflow, example, or older LifeOS convention conflicts with this file, follow this file. Prior context may help populate real content later, but it must not remove, rename, or narrow the baseline frame defined below.
+
+In an empty directory, initialization is not complete until every baseline role in section 3 exists, every required entry file exists, and the acceptance checklist in that section passes. Do not substitute an older “minimal golden path,” omit an empty role, or reduce the frame around the most recent task.
+
 ## 1. Inspect and protect the target
 
 Use the directory named by the user. If no directory is named, use the current working directory; do not ask for a path merely to begin.
@@ -35,7 +41,7 @@ These defaults make initialization deterministic. They are not permanent prefere
 
 ## 3. Build the baseline frame
 
-In an empty folder, establish this small general-purpose frame:
+In an empty folder, create every path in this small general-purpose frame:
 
 ```text
 README.md
@@ -81,9 +87,18 @@ Create only useful entry files:
 - one concise `README.md` in each other top-level directory;
 - only a few genuinely useful templates, adapted from `seed/templates/` and translated when appropriate.
 
-Do not add fake personal facts, sample projects, sample people, detailed empty subtrees, skills, hooks, automations, databases, or application code. Empty domains may contain only their useful entry page until real information arrives.
+Do not add fake personal facts, sample projects, sample people, detailed empty subtrees, skills, hooks, automations, databases, or application code. Empty domains may contain only their useful entry page until real information arrives. An empty role is not a reason to omit its top-level directory and entry page.
 
 If the folder already has a coherent structure, map the roles above into it. Add only missing semantic roles or documentation, and record the effective paths in `.lifeos/manifest.yaml`.
+
+Before declaring initialization complete, verify all of the following:
+
+- one user-facing root entry exists;
+- all twelve baseline roles are visible from that entry and mapped in the manifest: self, people, projects, areas, sources, minutes, discussions, knowledge, inbox, outputs, templates, and archive;
+- `me/README.md`, `me/priorities.md`, `me/principles.md`, and `me/decisions.md` exist at their effective paths;
+- every other baseline role has a concise entry page;
+- the control plane is active and internally consistent;
+- no personal fact, person, project, task, Connector, skill, automation, Git repository, or sync choice was invented.
 
 ## 4. Install the stable control plane
 

@@ -11,6 +11,7 @@ This repository is an idea, an MVP, and a seed for helping people build their ow
 - Treat `seed/` as adaptable source material. Preserve its semantics, but follow the user's language, structure, and actual needs rather than copying it mechanically.
 - Keep `.lifeos/{manifest.yaml,core.md,connectors.md,evolution.md}` as the small stable control plane for an initialized instance; personalize the user's content structure around it.
 - Directly establish the complete baseline semantic frame. A first value loop is optional and must not be invented or used to define the whole LifeOS.
+- Treat the current `START.md` as authoritative over cached pages, prior conversations, saved memory, examples, and older initialization conventions. In an empty target, do not omit any of its twelve baseline roles.
 - Preserve the boundary between the durable LifeOS workspace and disposable external working directories.
 - Keep work on the shared seed separate from real personal LifeOS content.
 

@@ -50,6 +50,8 @@ done
 grep -q 'do not ask for a path merely to begin' "$ROOT/START.md"
 grep -q 'Apply safe defaults without asking' "$ROOT/START.md"
 grep -q 'Build the baseline frame' "$ROOT/START.md"
+grep -q 'saved agent memory.*conflicts with this file, follow this file' "$ROOT/START.md"
+grep -q 'all twelve baseline roles' "$ROOT/START.md"
 grep -q 'The baseline frame is itself a complete initialization result' "$ROOT/START.md"
 grep -q 'Framework-only initialization does not require Connector discovery or authorization' "$ROOT/START.md"
 grep -q 'status: active' "$ROOT/START.md"
