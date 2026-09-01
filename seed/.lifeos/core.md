@@ -47,22 +47,26 @@ Do not recursively scan unrelated private content. Archive is opt-in for histori
 
 The semantics are stable; directory names and layout are not. Follow the path mapping in `.lifeos/manifest.yaml`, the user's language, and any existing structure.
 
-An initialized LifeOS should expose a small shared frame from one user-facing entry. The frame keeps these general roles distinguishable even when the user renames, nests, or merges their physical locations:
+An initialized LifeOS should expose a small shared frame from one user-facing entry. In a new empty folder, all of these roles belong to the baseline even when they initially contain only a useful entry page:
 
 - `me/` — identity, current roles, priorities, principles, and major decisions;
 - `people/` — ongoing relationship context;
 - `project/` — work with a result and completion condition;
 - `area/` — responsibilities or interests without a fixed endpoint;
 - `source/` — external and original material with provenance;
+- `minutes/` — meeting recordings, transcripts, and minutes;
+- `discuss/` — analysis and judgment around a concrete question;
+- `knowledge/` — topic knowledge compiled from named sources;
 - `inbox/` — uncategorized capture awaiting later judgment;
 - `outputs/` — durable deliverables intended for sharing or reuse;
+- `templates/` — a small set of reusable document shapes;
 - `archive/` — historical material that is no longer assumed to be current.
 
-Other roles are derived and should appear when earned by use, for example `minutes/` for meeting evidence, `discuss/` for analysis around a question, `knowledge/` for compiled topic knowledge, `templates/` for repeated document shapes, and `ops/` for recurring operational control.
+Additional roles such as `ops/` should appear only when earned by repeated use.
 
-These names are defaults and examples, not requirements. The user may rename, translate, nest, merge, or use one existing location for multiple roles. Record the effective mapping in `.lifeos/manifest.yaml` so future agents use the same structure. An optional derived directory may be absent. The shared roles must still be understandable from the entry page and manifest.
+These names are defaults and examples, not requirements. The user may rename, translate, nest, merge, or use one existing location for multiple roles. Record every effective baseline mapping in `.lifeos/manifest.yaml` so future agents use the same structure. The shared roles must still be understandable from the entry page and manifest.
 
-The first task is a vertical slice through this frame, not a taxonomy for the whole LifeOS. Previous conversations, email workflows, existing automations, and the first imported source may inform that slice but must not redefine the global structure. If the user changes from a task-level request to “build the framework first,” reevaluate the proposed structure before writing.
+The baseline frame is a complete initialization result and requires no invented task or onboarding answer. If the user has already supplied a concrete desired outcome and authorized input, that first task may be a vertical slice through the frame, but never its taxonomy. Previous conversations, email workflows, existing automations, and the first imported source may inform that slice but must not redefine the global structure. If the user asks to build the framework first, finish the framework without forcing a value loop.
 
 Generated content, headings, filenames, and templates should follow the user's preferred language and naming conventions. Internal runtime rules may remain in their source language.
 

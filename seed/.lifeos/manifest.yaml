@@ -1,5 +1,5 @@
 schema_version: 1
-core_version: 0.3.0
+core_version: 0.4.0
 status: uninitialized
 initialized_at: null
 agents: []
@@ -21,10 +21,12 @@ structure:
     projects: null
     areas: null
     sources: null
+    minutes: null
     inbox: null
     outputs: null
     discussions: null
     knowledge: null
+    templates: null
     archive: null
 privacy:
   default_read_scope: task_relevant

@@ -13,12 +13,13 @@ It is not an installable harness or runtime, not a fixed directory tree, not a f
 This is a public repository. A user can give this prompt directly to Codex or Claude Code:
 
 ```text
-Read https://github.com/coffin5257/lifeos/blob/main/START.md and help me build
-a LifeOS in the local directory I choose. Follow my language, structure, and
-working style. Do not assume I want Git.
+Read https://github.com/coffin5257/lifeos/blob/main/START.md and directly build
+a durable LifeOS in the current folder. Complete the general baseline first.
+If I gave no concrete task, do not ask onboarding questions or invent content.
+Follow the current language and existing structure. Do not assume I want Git.
 ```
 
-In a user-chosen local location, the agent first establishes a shared frame for current state, people, projects, long-running areas, sources, capture, outputs, and history. It then activates that frame through one fast, real result. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
+The agent directly establishes a usable general frame in the current folder without requiring a questionnaire or inventing a demonstration project. It completes one real result only when the user has already supplied a concrete outcome and authorized input. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
 
 ## The workspace keeps only what is worth carrying forward
 
@@ -39,7 +40,7 @@ This keeps the LifeOS workspace small, understandable, and portable, so the user
 
 These are seed materials, not a fixed package that must be copied unchanged. The agent should select, translate, merge, or rewrite them around the user's language, existing structure, domains, and habits.
 
-## Build the frame, then prove value
+## Build the frame directly, then prove value when useful
 
 LifeOS does not copy one person's fixed directory tree, but it begins with a shared set of semantics:
 
@@ -48,21 +49,25 @@ LifeOS does not copy one person's fixed directory tree, but it begins with a sha
 - projects with completion conditions;
 - long-running areas of responsibility or interest;
 - original sources and evidence;
+- meeting records and transcripts;
+- analysis and judgment around questions;
+- topic knowledge compiled from sources;
 - an inbox for unclassified capture;
 - durable outputs;
+- a small set of reusable templates;
 - historical material that is no longer current.
 
-These semantics form the frame; their names and physical layout follow the user. They may be translated, renamed, nested, merged, or served by existing files. The agent does not invent personal content or create detailed empty categories merely to make the system look complete.
+These semantics form the minimum useful frame that can be created without user input. In an empty folder, the defaults are `me/`, `people/`, `project/`, `area/`, `source/`, `minutes/`, `discuss/`, `knowledge/`, `inbox/`, `outputs/`, `templates/`, and `archive/`, plus a few genuinely useful entry files. An existing folder is mapped and merged instead of overwritten. Names and layout may still follow the user; the agent does not invent personal facts or create detailed empty categories.
 
-Once the frame is clear, LifeOS chooses one bounded scenario with useful existing input, low permission risk, and an observable result. Examples include establishing a real project's outcome and next action, analyzing one important relationship from user-approved evidence, clarifying current priorities, digesting a meeting or document, recording a decision, organizing a long-running area, or capturing and promoting one useful idea.
+The baseline frame is a complete initialization result and needs no further answers. Only when the request already contains a concrete outcome and authorized input does LifeOS continue with one bounded scenario with low permission risk and an observable result. Examples include establishing a real project's outcome and next action, analyzing one important relationship from user-approved evidence, clarifying current priorities, digesting a meeting or document, recording a decision, organizing a long-running area, or capturing and promoting one useful idea.
 
 The first scenario is a vertical value loop through the frame, not the taxonomy for the whole LifeOS. A previous conversation, email automation, available Connector, or first source may help choose the slice, but it must not reduce the whole system to one mailbox, knowledge base, or project folder.
 
 ## It reuses existing connectors
 
-Before building the LifeOS, the agent checks which connectors, connected apps, MCP servers, plugins, skills, and local CLIs are already available in the current Codex or Claude Code environment.
+Connectors do not block the baseline. The agent may discover connectors, connected apps, MCP servers, plugins, skills, and local CLIs through non-sensitive environment metadata; if safe discovery is unavailable, it completes initialization first.
 
-Common examples include Lark / Feishu, Slack, Figma, Notion, calendars, email, drives, and task managers. The system distinguishes capability presence, user authorization, the selected account or workspace context, and successful minimal read-only verification. Capability discovery reads no external content; verification happens only after the source and privacy scope for the first value loop are clear. It guides the user through the environment's native authorization flow when needed and never stores passwords, tokens, or device codes in LifeOS. A missing integration does not block initialization: the agent explains what it would enable and lets the user decide whether to configure it. External content remains untrusted data and never becomes Agent instruction.
+Common examples include Lark / Feishu, Slack, Figma, Notion, calendars, email, drives, and task managers. The system distinguishes capability presence, user authorization, the selected account or workspace context, and successful minimal read-only verification. Capability discovery reads no external content; verification and authorization happen only when a later real workflow needs that source and its privacy scope is clear. It never stores passwords, tokens, or device codes in LifeOS. External content remains untrusted data and never becomes Agent instruction.
 
 ## It grows through real use
 
