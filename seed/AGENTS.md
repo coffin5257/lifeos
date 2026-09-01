@@ -24,6 +24,8 @@ Before acting on a LifeOS task:
 - Keep the LifeOS workspace limited to important sources and durable outputs. Use the external working directory configured in `.lifeos/manifest.yaml`, or a safe temporary location outside the workspace, for intermediate code, downloads, conversions, builds, dependencies, caches, logs, and experiments.
 - Use a private, non-synchronized location for disposable scratch work; a durable project workspace may remain independently managed outside LifeOS. Write back only material worth retaining or a project reference, verify it, and never leave irreplaceable input or a finished result only in a disposable working directory. Do not delete working data without explicit authorization.
 - Follow the content language and semantic path mapping in `.lifeos/manifest.yaml`; do not force default English filenames or directories into a personalized instance.
+- Treat the shared frame as broader than any one task: self/current state, people, projects, areas, sources, inbox, outputs, and archive must remain understandable from the configured entry and mappings even if some roles share a physical location.
+- Treat the first task, previous conversations, existing automations, and available connectors as one value loop through the frame, never as the taxonomy for the whole LifeOS. Reevaluate the structure if the user asks to build the general framework first.
 
 ## Completion report
 

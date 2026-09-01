@@ -45,21 +45,24 @@ Do not recursively scan unrelated private content. Archive is opt-in for histori
 
 ## 5. Personalized structure
 
-The semantics are stable; directory names and layout are not. Follow the path mapping in `.lifeos/manifest.yaml`, the user's language, and any existing structure. The following names are defaults and examples, not requirements:
+The semantics are stable; directory names and layout are not. Follow the path mapping in `.lifeos/manifest.yaml`, the user's language, and any existing structure.
 
-- `me/` — identity, priorities, principles, and major decisions;
-- `inbox/` — uncategorized capture awaiting later judgment;
-- `source/` — external and original material;
-- `outputs/` — durable deliverables intended for sharing or reuse;
+An initialized LifeOS should expose a small shared frame from one user-facing entry. The frame keeps these general roles distinguishable even when the user renames, nests, or merges their physical locations:
+
+- `me/` — identity, current roles, priorities, principles, and major decisions;
 - `people/` — ongoing relationship context;
 - `project/` — work with a result and completion condition;
 - `area/` — responsibilities or interests without a fixed endpoint;
-- `minutes/` — recordings, transcripts, and meeting evidence;
-- `discuss/` — analysis around a specific question;
-- `knowledge/` — compiled topic knowledge with explicit sources;
-- `archive/` — historical material kept in its original semantic domain.
+- `source/` — external and original material with provenance;
+- `inbox/` — uncategorized capture awaiting later judgment;
+- `outputs/` — durable deliverables intended for sharing or reuse;
+- `archive/` — historical material that is no longer assumed to be current.
 
-The user may rename, translate, nest, merge, or omit these locations. Record the effective mapping in `.lifeos/manifest.yaml` so future agents use the same structure. Absence of a directory is valid. Structure follows actual use.
+Other roles are derived and should appear when earned by use, for example `minutes/` for meeting evidence, `discuss/` for analysis around a question, `knowledge/` for compiled topic knowledge, `templates/` for repeated document shapes, and `ops/` for recurring operational control.
+
+These names are defaults and examples, not requirements. The user may rename, translate, nest, merge, or use one existing location for multiple roles. Record the effective mapping in `.lifeos/manifest.yaml` so future agents use the same structure. An optional derived directory may be absent. The shared roles must still be understandable from the entry page and manifest.
+
+The first task is a vertical slice through this frame, not a taxonomy for the whole LifeOS. Previous conversations, email workflows, existing automations, and the first imported source may inform that slice but must not redefine the global structure. If the user changes from a task-level request to “build the framework first,” reevaluate the proposed structure before writing.
 
 Generated content, headings, filenames, and templates should follow the user's preferred language and naming conventions. Internal runtime rules may remain in their source language.
 

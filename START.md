@@ -16,31 +16,57 @@ Build LifeOS in the local directory chosen by the user. It may be a new folder o
 - Use a user-private, non-synchronized location for disposable scratch work, or a dedicated project workspace managed independently from LifeOS when the work itself must remain durable. All working data inherits the sensitivity of its source data.
 - Write back only important sources, durable results, and the provenance needed to understand them. Temporary work should remain reproducible or safely disposable.
 
-## 2. Start from one real outcome
+## 2. Establish the shared frame
 
-Ask what the user most wants LifeOS to help with now. Prefer one concrete situation over a complete life taxonomy, for example:
+Before choosing a first task, establish a small, navigable frame that can grow across the user's life. The frame defines what the LifeOS can hold; the first task must not define the whole system.
 
-- clarifying current priorities and projects;
-- preparing for an important conversation;
-- digesting a meeting, chat, or external document;
-- making and revisiting a decision;
-- managing a long-running life area;
-- capturing ideas without immediately organizing them.
+If the user already has a structure, map these roles into it rather than adding a parallel taxonomy. Otherwise, propose a language-appropriate expression of this default semantic backbone:
 
-## 3. Learn only what the first outcome needs
+- **self and current state** — identity, roles, priorities, and what is true now;
+- **people** — ongoing relationship and collaboration context;
+- **projects** — work with an outcome and completion condition;
+- **areas** — responsibilities or interests without a fixed endpoint;
+- **sources** — original evidence and imported material with provenance;
+- **inbox** — uncategorized capture awaiting later judgment;
+- **outputs** — durable results worth keeping or sharing;
+- **archive** — historical material that is no longer assumed to be current.
 
-Establish only four things before proposing the initial shape:
+The roles are shared; their names and physical layout are personal. The user may translate, rename, nest, merge, or omit a physical directory when another location already serves the same role. Make the frame visible from one user-facing entry page and record its effective mappings in `.lifeos/manifest.yaml`.
+
+Create only the entry points and locations needed to make this backbone understandable and usable. Do not invent personal facts, populate empty domains with speculative content, or prebuild detailed subcategories. Derived spaces such as meetings, discussions, compiled knowledge, templates, and operations may appear later when real use justifies them.
+
+## 3. Choose one fast value loop
+
+After the frame is clear, ask which bounded outcome would prove value quickly. Prefer a result with useful existing input, clear benefit, low permission risk, and an observable finish, for example:
+
+- establishing one real project's outcome, current state, and next action;
+- analyzing one important relationship from user-approved evidence;
+- clarifying current priorities;
+- digesting one meeting, chat, or external document;
+- making and recording one decision;
+- organizing one long-running area;
+- capturing ideas and promoting one useful item.
+
+Treat this as the first vertical slice through the shared frame, not as its taxonomy. A current task, previous conversation, existing automation, connector, or available source may suggest the slice, but it must not narrow the whole LifeOS around that context.
+
+If the user says to build the framework before doing the task, honor that change of scope. Finish the general frame first and keep the earlier task only as a candidate first slice unless the user still chooses it.
+
+## 4. Learn only what the frame and first loop need
+
+Establish only these things before proposing the initial shape:
 
 - the exact local target;
-- the first result to complete;
 - the content and naming language;
-- the privacy and write boundaries needed for that result.
+- any existing structure that should express the shared frame;
+- the user's major current contexts needed to make the frame intelligible;
+- the first result to complete, if the user wants to activate one now;
+- the privacy and write boundaries needed for the frame and first result.
 
-Learn other preferences only when they affect the first workflow. These may include an existing structure, preferred name, current roles, 30–90 day outcomes, source systems, external working-directory location, collaboration style, or agent proactivity.
+Learn other preferences only when they materially affect the frame or first value loop. These may include a preferred name, current roles, 30–90 day outcomes, source systems, external working-directory location, collaboration style, or agent proactivity.
 
 Ask a few compact questions at a time, accept incomplete answers, and continue learning through real use. Never turn this list into a questionnaire or infer sensitive facts from weak evidence.
 
-## 4. Inspect only the relevant agent capabilities
+## 5. Inspect only the relevant agent capabilities
 
 Connector preflight has two phases.
 
@@ -54,7 +80,7 @@ First, use non-mutating discovery to understand capability metadata in the curre
 
 Do not read external user content merely to discover what is installed.
 
-After the first workflow, expected source system, and privacy scope are clear, inspect only the connectors relevant to that workflow. For each one:
+After the first value loop is chosen and its expected source system and privacy scope are clear, inspect only the connectors relevant to that loop. For each one:
 
 - distinguish presence, authorization, expected account or workspace context, and verification;
 - confirm that the selected non-sensitive account or workspace context matches the user's expectation;
@@ -68,12 +94,13 @@ If a useful integration is absent, explain what it would enable and ask whether 
 
 Use [`seed/.lifeos/connectors.md`](seed/.lifeos/connectors.md) for the detailed connector boundaries.
 
-## 5. Reflect the proposed beginning
+## 6. Reflect the proposed beginning
 
 Before broad creation, summarize:
 
-- the exact local target and first result;
-- the proposed language and smallest useful semantic structure;
+- the exact local target;
+- the proposed language and how the shared frame will be expressed;
+- the first value loop and which parts of the frame it will activate;
 - relevant connectors that are ready, need authorization, mismatch the expected context, are absent, or are intentionally skipped;
 - the few files and directories worth creating now;
 - where temporary and intermediate work will happen outside the LifeOS workspace;
@@ -82,7 +109,7 @@ Before broad creation, summarize:
 
 If the user already asked to build the LifeOS, this reflection is for correction rather than a second permission gate. Incorporate corrections and continue.
 
-## 6. Plant the seed
+## 7. Plant the seed
 
 Use `seed/` as adaptable source material. A working LifeOS has a tiny stable control plane and a personalized content structure.
 
@@ -109,24 +136,29 @@ If the target already has `AGENTS.md`, `CLAUDE.md`, or `.lifeos/`, do not replac
 
 ### Personalized content
 
-Preserve the semantic distinctions in `seed/.lifeos/core.md`, but do not impose its example taxonomy on an existing system. Translate, trim, merge, or rewrite files under `seed/templates/` only when they help the first workflow.
+Preserve the semantic distinctions in `seed/.lifeos/core.md`, but do not impose its example taxonomy on an existing system. Translate, trim, merge, or rewrite files under `seed/templates/` only when they help establish the frame or complete the first value loop.
 
-A new instance may initially add only a few personalized locations, for example:
+A new instance should normally establish a user-facing entry and effective mappings for the shared backbone, for example:
 
 ```text
+  home.md or a user-named entry
   me/ or a user-named equivalent
-  inbox/ or a user-named equivalent
+  people/ or a user-named equivalent
+  project/ or a user-named equivalent
+  area/ or a user-named equivalent
   source/ or a user-named equivalent
+  inbox/ or a user-named equivalent
   outputs/ or a user-named equivalent
+  archive/ or a user-named equivalent
 ```
 
-These content paths are examples, not a required tree. The user may translate, rename, nest, merge, or omit them. Record only the effective mappings in `.lifeos/manifest.yaml`; unused semantic paths may remain absent or null.
+These paths are an example expression, not a required tree. The user may translate, rename, nest, merge, or use an existing file or directory for more than one role. Record the effective mappings in `.lifeos/manifest.yaml`. Optional derived roles may remain absent or null, but do not silently let the first value loop erase the rest of the shared frame.
 
 The initialized manifest should record:
 
 - initialization date and active agent environments;
 - content language and collaboration preferences that are already known;
-- effective semantic path mappings;
+- the user-facing entry and effective shared-frame mappings;
 - only the capabilities actually enabled;
 - only relevant Connector readiness and context-match status;
 - storage, sync, and version control as user choices;
@@ -134,9 +166,9 @@ The initialized manifest should record:
 
 Do not create skills, hooks, or automations at the beginning.
 
-## 7. Complete one golden path
+## 8. Complete one golden path
 
-Use the user's real situation to complete one useful end-to-end action. Preserve raw evidence separately from current state and judgment. Show the user where information went and why.
+Use the user's chosen value loop to complete one useful end-to-end action across the shared frame. Preserve raw evidence separately from current state and judgment. Show the user where information went and why, and make clear that this first populated slice is not the boundary of the LifeOS.
 
 Perform implementation and machine-specific work outside the LifeOS workspace. A durable project workspace may remain independently managed; disposable scratch work may be removed later. Before finishing:
 
@@ -147,7 +179,7 @@ Perform implementation and machine-specific work outside the LifeOS workspace. A
 
 Examples include capturing one idea, creating one active project with a completion condition, saving one source and deriving a separately labeled judgment, recording one decision, or establishing one current area state.
 
-## 8. Leave the seed able to grow
+## 9. Leave the seed able to grow
 
 Make the local LifeOS aware of [`seed/.lifeos/evolution.md`](seed/.lifeos/evolution.md). Future agents should be able to propose, when justified by real use:
 
@@ -162,12 +194,12 @@ Make the local LifeOS aware of [`seed/.lifeos/evolution.md`](seed/.lifeos/evolut
 
 Every evolution should explain the evidence, affected data, required permissions, verification, and removal path.
 
-## 9. Finish with a usable map
+## 10. Finish with a usable map
 
 Report:
 
-- the local target and what now exists;
-- the first workflow that works;
+- the local target, user-facing entry, and shared frame that now exist;
+- the first value loop that works and which parts of the frame it populated;
 - a few natural-language examples for the next interaction;
 - what remains intentionally absent;
 - Connector status, context match, and any user authorization still needed;

@@ -1,5 +1,5 @@
 schema_version: 1
-core_version: 0.2.0
+core_version: 0.3.0
 status: uninitialized
 initialized_at: null
 agents: []
@@ -15,13 +15,14 @@ personalization:
 structure:
   mode: personalized
   paths:
+    entry: null
     self: null
-    inbox: null
-    sources: null
-    outputs: null
     people: null
     projects: null
     areas: null
+    sources: null
+    inbox: null
+    outputs: null
     discussions: null
     knowledge: null
     archive: null

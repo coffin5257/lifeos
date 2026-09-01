@@ -18,7 +18,7 @@ a LifeOS in the local directory I choose. Follow my language, structure, and
 working style. Do not assume I want Git.
 ```
 
-The agent first understands the user's real need, then creates the smallest useful system in a user-chosen local location. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
+In a user-chosen local location, the agent first establishes a shared frame for current state, people, projects, long-running areas, sources, capture, outputs, and history. It then activates that frame through one fast, real result. The user does not need to fork or clone this repository, and personal content does not need to be uploaded to GitHub.
 
 ## The workspace keeps only what is worth carrying forward
 
@@ -39,17 +39,30 @@ This keeps the LifeOS workspace small, understandable, and portable, so the user
 
 These are seed materials, not a fixed package that must be copied unchanged. The agent should select, translate, merge, or rewrite them around the user's language, existing structure, domains, and habits.
 
-## It begins by understanding the user
+## Build the frame, then prove value
 
-LifeOS starts from one real outcome rather than an exhaustive life taxonomy. Examples include clarifying priorities, preparing for an important conversation, digesting meetings or documents, revisiting a decision, managing a long-running area, or capturing ideas with low friction.
+LifeOS does not copy one person's fixed directory tree, but it begins with a shared set of semantics:
 
-The agent then learns the user's content language, naming conventions, important contexts, next 30–90 day outcomes, privacy boundaries, and collaboration preferences. Paths such as `me/people/project/...` are semantic examples only. They may be translated, renamed, nested, merged, or omitted.
+- self and current state;
+- people and relationships;
+- projects with completion conditions;
+- long-running areas of responsibility or interest;
+- original sources and evidence;
+- an inbox for unclassified capture;
+- durable outputs;
+- historical material that is no longer current.
+
+These semantics form the frame; their names and physical layout follow the user. They may be translated, renamed, nested, merged, or served by existing files. The agent does not invent personal content or create detailed empty categories merely to make the system look complete.
+
+Once the frame is clear, LifeOS chooses one bounded scenario with useful existing input, low permission risk, and an observable result. Examples include establishing a real project's outcome and next action, analyzing one important relationship from user-approved evidence, clarifying current priorities, digesting a meeting or document, recording a decision, organizing a long-running area, or capturing and promoting one useful idea.
+
+The first scenario is a vertical value loop through the frame, not the taxonomy for the whole LifeOS. A previous conversation, email automation, available Connector, or first source may help choose the slice, but it must not reduce the whole system to one mailbox, knowledge base, or project folder.
 
 ## It reuses existing connectors
 
 Before building the LifeOS, the agent checks which connectors, connected apps, MCP servers, plugins, skills, and local CLIs are already available in the current Codex or Claude Code environment.
 
-Common examples include Lark / Feishu, Slack, Figma, Notion, calendars, email, drives, and task managers. The system distinguishes capability presence, user authorization, the selected account or workspace context, and successful minimal read-only verification. Capability discovery reads no external content; verification happens only after the first task and privacy scope are clear. It guides the user through the environment's native authorization flow when needed and never stores passwords, tokens, or device codes in LifeOS. A missing integration does not block initialization: the agent explains what it would enable and lets the user decide whether to configure it. External content remains untrusted data and never becomes Agent instruction.
+Common examples include Lark / Feishu, Slack, Figma, Notion, calendars, email, drives, and task managers. The system distinguishes capability presence, user authorization, the selected account or workspace context, and successful minimal read-only verification. Capability discovery reads no external content; verification happens only after the source and privacy scope for the first value loop are clear. It guides the user through the environment's native authorization flow when needed and never stores passwords, tokens, or device codes in LifeOS. A missing integration does not block initialization: the agent explains what it would enable and lets the user decide whether to configure it. External content remains untrusted data and never becomes Agent instruction.
 
 ## It grows through real use
 
