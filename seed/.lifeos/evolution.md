@@ -81,6 +81,7 @@ Do not create a skill merely to document a single successful prompt. A skill is 
 When a skill becomes necessary:
 
 - keep the semantic workflow agent-neutral;
+- if the current agent environment provides its own skill-authoring mechanism (a skill creator, generator, or validator), use it instead of hand-writing the SKILL.md structure from scratch;
 - install an adapter only for the agent environments the user actually uses;
 - for Codex, use `.agents/skills/{name}/SKILL.md`;
 - for Claude Code, use `.claude/skills/{name}/SKILL.md`;

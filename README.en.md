@@ -2,9 +2,9 @@
 
 [中文](README.md) · **English**
 
-**Give people ownership of their long-term AI context.**
+**AI takes over your life.**
 
-LifeOS is a personal context system for Codex, Claude Code, and compatible agents. It records what matters now, which decisions have been made, what is out of date, and where each conclusion came from. The files stay under your control and remain readable by both people and agents.
+LifeOS is a personal context system for Codex, Claude Code, and compatible agents — not by deciding for you, but by remembering the decisions you've already made: what matters right now, which conclusions are stale, and what each judgment was based on. The files live in your own folder, stay readable by people, and carry over to whichever agent you use next.
 
 ```text
 Regardless of earlier conversation or memory, read https://raw.githubusercontent.com/coffin5257/lifeos/main/START.md in full.
@@ -12,91 +12,44 @@ Using the current version, initialize my LifeOS directly in the current folder. 
 onboarding questions, invent personal content, overwrite existing files, or assume I want Git.
 ```
 
-## Mission
+## Why this exists
 
-Today, an AI's understanding of a person is usually scattered across chat history, product memory, and hidden model state. Change the conversation, model, or tool and the relationship begins again. The person has little control over what was remembered, where it came from, or whether it is still true.
+I started asking AI to take part in more consequential work: making decisions, digesting meetings, understanding relationships, moving projects forward. What actually got in the way was never how smart the model was — it was that the agent didn't know what was still valid, or where a conclusion came from.
 
-LifeOS puts that long-term context back in the person's hands:
+Chat history keeps what was said. Product memory keeps a few preferences. Both stay locked inside one product — I can't inspect what it remembers, and I lose it the moment I switch models or tools.
 
-- The person stores and edits it; no platform owns it.
-- Different agents can read it; changing tools does not erase it.
-- Sources and time boundaries remain visible; memory is not treated as permanent fact.
-- The system changes with real life instead of going stale after one import.
+So I keep that context in ordinary files I control. Current priorities have a clear entry point. Important decisions keep their basis and outcome attached. Meetings and chats keep their original record for verification. Finished projects move to an archive. A different agent picks up the same files and keeps going.
 
-The aim is not a more complete personal profile. It is infrastructure that can stay useful for years, support judgment and action, and leave authority with the person.
+This public repository is the method, not my personal records.
 
-## When chat history stops being enough
+## What using it feels like
 
-Once you ask AI to evaluate a career move, prepare a 1:1, move a project forward, digest meetings, or review household finances, remembering what you said is no longer sufficient.
+The biggest change: you can start from the question instead of onboarding the AI again every time.
 
-The agent also needs to know:
+1. **Making sense of a relationship**
+   The agent pulls up what actually happened between you two and the read you had on it at the time, and helps you trace how you got here.
 
-- which material is original evidence and which is later judgment;
-- which plan is current and which actions are finished;
-- whether a discussion became an actual decision;
-- which people, projects, and principles matter to the question;
-- what evidence is required before the next step counts as complete.
+2. **Remembering how a big decision evolved**
+   The agent remembers how the question evolved — from "is this job still worth staying in" to "what does staying cost versus leaving" — not just which way you went.
 
-That is the job LifeOS performs. As you delegate more important work to AI, it maintains current, verifiable personal context so that you do not rebuild the background every time or let old information make today's decisions.
+3. **Reviewing a part of your life you manage long-term**
+   The agent answers from the current numbers on things like finances and health, not a three-year-old budget or an old checkup.
 
-## What a real LifeOS has done
+4. **Checking whether an old judgment still holds**
+   The agent pulls up the reasoning and assumptions behind a call you made months ago, and tells you which of those assumptions still hold and which don't.
 
-This repository was extracted from a personal system in ongoing use. The examples below are work it has already performed, not imagined use cases.
+5. **Checking a project's real status**
+   The agent separates what's actually decided from what's still being argued over and what's long since archived.
 
-### Preserved how a career decision changed
+Switch agents and that context is still there. You can open the files and see what it relied on this time, and fix anything wrong or stale yourself. LifeOS can't guarantee every AI judgment is correct — but it gives that judgment something to check, so the next collaboration doesn't start from zero.
 
-The system kept a career decision under review as evidence changed. The first framework monitored negative signals. New evidence later changed the framework to opportunity-cost comparison. Once the job change happened, the old checkpoints were closed instead of lingering as current plans.
+## How it differs from notes and task apps
 
-The durable result was not only “changed jobs.” It preserved the facts, options, changes in judgment, execution result, and review conditions.
+Notes apps store material, but material doesn't turn into "what to do now" on its own. Task apps store actions, but actions are separated from the people, projects, and evidence behind them. AI chat memory stores conversations, but it doesn't leave that one product — switch tools and it's gone.
 
-### Protected the present after a context switch
+LifeOS keeps sources, current state, judgment, and decisions in separate layers, then lets an agent connect them from the same set of files. A summary doesn't get to overwrite the original. An old action item doesn't get to resurface as something current. One conversation doesn't get to become a permanent verdict on a person.
 
-After the move to a new work environment, former-company projects, people judgments, and action items remained available as history but stopped influencing daily advice. New priorities, relationships, and project state became the default context.
-
-The agent can remember the past without confusing it with the present.
-
-### Turned work history into usable current state
-
-During one work-context refresh, the system processed tens of thousands of messages and dozens of meeting records into current priorities, a collaboration map, project decisions, and open questions. Exploration, preference, decision, and resource commitment were recorded as different things.
-
-The result was not a longer meeting summary. It was current state that could be used in the next piece of work.
-
-### Made household finance a policy that can be recalibrated
-
-The system separated asset snapshots, loan terms, essential spending, and income assumptions, then maintained a household investment policy and monthly path. Future bonuses were not recorded as current assets. Historical snapshots did not masquerade as live balances. Each month could be recalibrated with actual figures.
-
-It preserved decision rules and safety boundaries rather than producing one-off investment advice.
-
-### Studied how people and agents work reliably together
-
-The system inventoried 2,119 main coding-agent sessions across two months and deeply reviewed 21 complex cases. The main long-task failure was not an inability to write code. It was collapsing “implemented,” “tested locally,” “deployed,” and “accepted by the user” into one claim of completion.
-
-Those findings became rules for completion state, evidence, authorization, and real-path verification. LifeOS can change how future work is performed, not merely store its output.
-
-The public repository contains none of the personal records or internal source material behind these cases. It keeps only the reusable protocol derived from them.
-
-## How it differs from familiar tools
-
-| Tool | What it handles well | What is missing for long-term agent work |
-|---|---|---|
-| AI chat history and memory | Conversations and preferences | Source authority, freshness, decision state, and complete context |
-| Notion, Obsidian, and document folders | Storage and retrieval | Documents do not automatically become current state or next action |
-| Task managers | Actions and deadlines | Actions are separated from people, projects, evidence, and reasoning |
-| LifeOS | Sources, current state, judgment, decisions, actions, and history in one model | It must be maintained through real use; there is no one-time import that finishes the job |
-
-LifeOS does not replace these tools. It gives agents shared semantics across them so that information from different sources can participate in the same decision process.
-
-## How it stays trustworthy
-
-**Current state comes first.** The agent starts with current priorities and the relevant people or projects, then opens meetings, chats, and documents only when needed.
-
-**Original material remains intact.** Summaries, analyses, and wiki pages do not replace the source. Important claims can be checked.
-
-**Judgments have time boundaries.** One conversation does not become a permanent judgment about a person. Dated financial and health information does not become timeless fact.
-
-**History is downranked by default.** Finished projects and actions move to an archive. They remain available without occupying today's attention.
-
-**Capabilities grow from observed friction.** A repeated document shape may become a template. A stable workflow may become a skill. Repeated manual transfer may justify a connector.
+The structure isn't designed upfront either — a document earns a template only once it genuinely repeats; a workflow earns a skill or automation only once it's proven stable.
 
 ## Start
 
@@ -104,9 +57,9 @@ LifeOS does not replace these tools. It gives agents shared semantics across the
 2. Start Codex or Claude Code in that directory.
 3. Copy the prompt at the top of this README.
 
-The agent first creates a complete, navigable Markdown foundation. It does not require a questionnaire or invent demonstration projects. In an existing directory, it maps compatible roles instead of rearranging everything to match a template.
+The agent first builds a complete, navigable Markdown foundation. No questionnaire, no invented projects for show. An existing directory gets mapped into compatible roles instead of being rearranged to fit a template.
 
-Then begin with one real task:
+Then start with one real task:
 
 ```text
 Organize the three things that matter most right now. Keep only the next actions that are still valid.
@@ -120,7 +73,7 @@ Analyze this meeting. Preserve the original record, then write the decisions and
 I am considering an important choice. Record the facts, my judgment, the options, and the final decision separately.
 ```
 
-You do not need to clone this repository or upload personal content to GitHub.
+You don't need to clone this repository or upload personal content to GitHub.
 
 ## Default structure
 
@@ -148,10 +101,10 @@ archive/     history that no longer represents current state
 
 ## Data and boundaries
 
-LifeOS is a set of local files. It does not require a database or hosted service. You may keep it in an ordinary folder, iCloud, Dropbox, a NAS, or Git.
+LifeOS is local files — no database, no hosted service required. Keep it in an ordinary folder, iCloud, Dropbox, a NAS, or Git; your call.
 
-Downloads, conversions, code, caches, and logs belong in a temporary working directory outside LifeOS. The agent writes back only sources and results worth retaining. Connectors such as Lark, Slack, Notion, Figma, and email are used when a task needs them. Passwords, tokens, and device codes do not belong in LifeOS.
+Downloads, conversions, code, caches, and logs belong in a temporary working directory outside LifeOS — only sources and results worth keeping get written back. Connectors like Lark, Slack, Notion, Figma, and email get turned on per task. Passwords, tokens, and device codes never go into LifeOS.
 
-The current version is a public seed that can already be used, not a finished GUI product. [`START.md`](START.md) contains the initialization protocol. [`seed/`](seed/) contains the agent rules and templates.
+The current version is a public seed you can actually use, not a finished GUI product. [`START.md`](START.md) has the initialization protocol; [`seed/`](seed/) has the agent rules and templates.
 
-If a real task fails to produce what you need, [open an Issue](https://github.com/coffin5257/lifeos/issues/new) with the outcome, where it got stuck, and the working style you want the agent to preserve. Do not include private records or credentials.
+If a real task doesn't get you what you needed, [open an Issue](https://github.com/coffin5257/lifeos/issues/new) — say what you were trying to do, where it broke down, and what working style you want the agent to keep. Don't attach private material or credentials.
